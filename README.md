@@ -1,2 +1,0 @@
-# temp_make_md_nanobanana_prompt
-テスト用途

@@ -1,0 +1,76 @@
+# 画像生成計画
+
+以下の画像を作成してください。「共通設定」や「画像のスタイルガイド」に従ってください。
+
+{{INSERT}}
+
+-----------------------------------------------
+
+## 共通設定 (Common Settings)
+
+*   **Tool Capability**: Use `nanobanana` (or compatible model) which **CAN** render Japanese text correctly.
+*   **Style**: **Modern Flat Vector (Clean Line Art)**.
+    *   **Keep**: Simple, geometric shapes, bold outlines, flat colors (Blue/Teal/White).
+    *   **Keep**: Professional yet approachable (Tech editorial style).
+    *   **Avoid**: Overly "Kawaii" or childish elements. Keep it "Cool & Clean".
+    *   **Vibe**: High-quality tech documentation.
+*   **Target Audience**: Japanese developers (Beginners to Intermediate).
+*   **Text/Label Rules**:
+    *   **Use Japanese Proactively**: Since the model supports it, use Japanese for key concepts to make it intuitive.
+    *   **Format**: Use "English" for code terms (e.g. `String`, `Entity`), and "Japanese" for explanatory labels (e.g. 「値」「不変」).
+    *   **Font Style**: Clean, sans-serif, legible.
+
+-----------------------------------------------------
+
+# 画像のスタイルガイド
+
+## 背景は真っ白でかつ不透明とすること
+
+## イラストスタイルガイド：モダンで親しみやすいフラットベクター風
+
+## 🎨 決定したスタイル
+**モダンで親しみやすいフラットベクター風（Modern Flat Vector / Clean Line Art）**
+
+学習の旅を、整理された「モダンなテックガイド」として案内するためのスタイルです。可愛らしさを残しつつ、技術的な概念をクリアに伝えることを目的としています。
+
+### 主な特徴（Key Characteristics）
+- **線画 (Line Work)**: 明確で均一な太さの線（Bold Outlines）。スケッチ風のかすれや揺れはなく、滑らかでクリーンなベクターライン。
+- **色使い (Color Palette)**: フラットな塗り（Flat Colors）。グラデーションや複雑なテクスチャは避け、はっきりとした色分けを行う。Webデザインやアイコンに近い、洗練された配色（ブルー、ティール、オレンジなどを基調に、目に優しいトーン）。
+- **雰囲気 (Vibe)**: プロフェッショナルだが親しみやすい、整理されている、教育的、テックフレンドリー。
+- **比喩 (Metaphors)**: 既存の比喩（積み木、冒険、魔法など）は維持しつつ、それを「子供の落書き」ではなく「デザインされたアイコン/イラスト」として表現する。
+
+---
+
+## 📝 プロンプトのテンプレート
+
+AIへの指示（プロンプト）は以下の構成にします。
+
+**重要**: AIに対して「日本語のテキストを描画せよ」と明示的に指示します。
+
+```text
+A modern flat vector illustration of [主題/動作].
+Style: Clean line art, geometric, tech editorial style.
+Uniform bold outlines, flat colors, no gradients, white background.
+
+Target Audience: Japanese learners.
+Text Rendering:
+- The image MUST contain specific Japanese text.
+- Font should be clean and rounded sans-serif.
+
+Labels to Render:
+- [英語ラベル]: "[日本語のテキスト]"
+- [英語ラベル]: "[日本語のテキスト]"
+...
+
+Visual Details:
+[具体的な視覚的指示]
+```
+
+**（例）**
+> **Theme**: Entity vs VO
+> **Labels**:
+> - Left Box: "Entity (正体)"
+> - Right Box: "Value (値)"
+> **Visual**: A geometric illustration comparing a box (Entity) and a crystal (Value).
+
+---
