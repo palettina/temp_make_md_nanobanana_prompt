@@ -11,6 +11,8 @@
 
 ## 到達目標 ✅
 
+![Logging as a Letter to the Future](./picture/gof_cs_study_010_future_letter.png)
+
 * `ILogger` を使ってログを出せる 🧩
 * **ログレベル**（Information / Warning / Error…）を使い分けできる 🎚️
 * ログを入れる場所を **入口 / 出口 / エラー** に絞れる 🚪➡️🚪💥
@@ -219,10 +221,14 @@ public class OrderServiceTests
 
 1. **ログ出しすぎ問題** 📣📣📣
 
+![Log Signal vs Noise](./picture/gof_cs_study_010_signal_vs_noise.png)
+
 * なんでもかんでも `LogInformation` にすると、必要な情報が埋もれるよ〜😭
   ➡️ 最初は「入口/出口/エラー + 重要イベント」だけ！
 
 2. **ログレベルが全部同じ** 🎚️🫠
+
+![Log Level Hierarchy](./picture/gof_cs_study_010_log_ladder.png)
 
 * 正常系まで `Error` にすると監視が死ぬ
 * 逆に障害なのに `Information` だと気づけない
@@ -234,10 +240,14 @@ public class OrderServiceTests
 
 3. **文字列補間でログを書く** 🧵💸
 
+![Structured Logging](./picture/gof_cs_study_010_structured_logging.png)
+
 * 構造化されない＆無駄に文字列生成されがち
   ➡️ `{}` プレースホルダ形式にしよう✨
 
 4. **個人情報・秘匿情報を入れる** 🔒⚠️
+
+![Sensitive Data Masking](./picture/gof_cs_study_010_data_masking.png)
 
 * パスワード、トークン、カード番号、住所…は基本NG🙅‍♀️
   ➡️ 「マスク」or「入れない」が安全！
@@ -245,6 +255,8 @@ public class OrderServiceTests
 ---
 
 ## ミニ演習（10〜30分）🧁⏱️
+
+![Log Sandwich (In/Out/Error)](./picture/gof_cs_study_010_log_sandwich.png)
 
 **お題：OrderServiceのログを“入口/出口/エラー”に絞って整える🛒📝**
 

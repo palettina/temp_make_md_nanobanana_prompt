@@ -11,6 +11,8 @@ GoFの考え方はそのままに、C#の言語機能（record / with / デリ�
 
 ## 到達目標 ✅
 
+![3 Pillars of Modern C# for Patterns](./picture/gof_cs_study_007_three_pillars.png)
+
 * 「Strategy（方針の差し替え）」を **interface版** と **Func版** で書き比べて、状況で選べる🧠✨
 * `record` と `with` を使って、**不変っぽいデータ（値オブジェクト/DTO）を安全に扱える**📦💕
 * `switch` **式** と **パターンマッチ**で、`if/switch`のごちゃごちゃを読みやすくできる🔍✨
@@ -25,6 +27,8 @@ GoFの考え方はそのままに、C#の言語機能（record / with / デリ�
 「GoFを暗記」じゃなくて、「困りごとに対して道具を選ぶ」感覚が大事だよ〜🙂🌷
 
 * **Strategy（方針の差し替え）**
+
+![Strategy: Interface vs Func](./picture/gof_cs_study_007_interface_vs_func.png)
 
   * しっかり設計：`interface` / クラス
   * 軽くしたい：`Func<>` / `Action<>`（デリゲート）
@@ -85,6 +89,8 @@ public record Order(
 
 ### 3) Strategy（interface版）…王道で読みやすい👑✨
 
+![Interface Strategy Structure](./picture/gof_cs_study_007_interface_strategy.png)
+
 **「振る舞いに名前が付く」**のが強い！チーム開発で超読みやすい😊
 
 ```csharp
@@ -127,6 +133,8 @@ public sealed class DiscountService
 ---
 
 ### 4) Strategy（Func版）…小さくて速い💨✨
+
+![Func Strategy Structure](./picture/gof_cs_study_007_func_strategy.png)
 
 「割引が1行〜数行」「増えない」「クラス作るほどじゃない」なら超便利🙂🎀
 
@@ -174,6 +182,8 @@ public sealed class DiscountServiceFunc
 
 ### 5) switch式 + パターンマッチで「分岐を読みやすく」する🔍✨
 
+![Sorting with Pattern Matching](./picture/gof_cs_study_007_pattern_matching.png)
+
 「条件が増えると地獄」になりがち。そこで **switch式**と**パターンマッチ**！
 
 #### 例：注文の特徴で割引ルールを切り替える🎛️
@@ -207,6 +217,8 @@ public static Money CalcDiscountByPattern(Order order)
 ---
 
 ### 6) record + with で「コピーして一部だけ変える」🧾✨
+
+![Record with Expression](./picture/gof_cs_study_007_record_with.png)
 
 Prototypeっぽい発想を **C#らしく**軽くできるよ！
 

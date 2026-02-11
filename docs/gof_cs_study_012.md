@@ -77,6 +77,8 @@ public sealed record ProcessResult(
 
 ### 3) “わざと”全部入りの注文処理を書く（分岐地獄の本体）🔥
 
+![The Branching Hell Maze](./picture/gof_cs_study_012_branching_maze.png)
+
 `OrderProcessor.cs` を作って、**責務ごちゃ混ぜ**でいきます😈（この章では褒められるやつ）
 
 ```csharp
@@ -237,6 +239,9 @@ public sealed class OrderProcessor
 
 ここでの観察ポイント👀✨
 
+![Logic Tangle](./picture/gof_cs_study_012_logic_tangle.png)
+![Multi-dimensional Explosion](./picture/gof_cs_study_012_multi_dim_explosion.png)
+
 * 「決済」も「通知」も「状態遷移」も、ぜんぶ `Process` に入ってる😇
 * `switch` が**入れ子**になってて、追加変更が怖いタイプ😵
 
@@ -263,6 +268,8 @@ flowchart TD
 ---
 
 ### 4) テストで“仕様を固定”する（超大事）🧪🌸
+
+![Fragile Processor](./picture/gof_cs_study_012_fragile_processor.png)
 
 `OrderProcessorTests.cs`（MSTest）で、まず6本いきます👇
 ※ここでは「結果がこうなる」を固定できればOK！
@@ -390,6 +397,8 @@ public sealed class OrderProcessorTests
 
 ### 5) ここで「分岐が増える要因」をメモする📝✨
 
+![Pain of Adding a New Channel](./picture/gof_cs_study_012_pain_of_new_channel.png)
+
 次の3つ、コードの中で見つけてメモしてね👇（後の章で効く！）
 
 * 状態が増える：`OrderStatus` が増えたら？😵
@@ -407,6 +416,8 @@ public sealed class OrderProcessorTests
 ---
 
 ## 演習 💪✨（10〜30分 × 2本）
+
+![Testing the Mess](./picture/gof_cs_study_012_heavy_testing.png)
 
 ### 演習1：通知手段を1つ追加してみる📣😇
 

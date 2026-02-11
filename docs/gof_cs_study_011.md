@@ -44,6 +44,8 @@ await orderService.PayAsync(PaymentKind.CreditCard, new Money(1200));
 
 ### 2) “DIの3語”を押さえる（ここ超大事！）🧠✨
 
+![DI 3-Step Process](./picture/gof_cs_study_011_di_steps.png)
+
 * **登録（Registration）**：`ServiceCollection` に「これ使うよ」を並べる📌
 * **解決（Resolve）**：必要になったらコンテナが作って渡す🎁
 * **注入（Injection）**：主に **コンストラクタ引数**で渡す（C#の王道）🚪
@@ -183,6 +185,8 @@ await orderService.PayAsync(PaymentKind.CreditCard, new Money(1200));
 
 ### 5) ライフサイクル（超重要）⏳📦
 
+![DI Lifetimes](./picture/gof_cs_study_011_lifetimes.png)
+
 DIの“事故”はだいたいここから起きるよ…！😇
 
 * `AddSingleton`：アプリ中ずっと1個（共有したい・状態が安全なら）👑
@@ -217,6 +221,8 @@ var session = scope.ServiceProvider.GetRequiredService<CheckoutSession>();
 ---
 
 ### 7) テストで“登録だけ”差し替えする 🧪💞
+
+![Swapping for Testing](./picture/gof_cs_study_011_test_swap.png)
 
 ここがDIの気持ちよさポイント！😍
 本番実装を触らず、**テスト側の登録で差し替え**できるよ。
@@ -287,6 +293,8 @@ public class OrderServiceTests
 
 ### 8) AI補助（Copilot/Codex）を使うときの“安全プロンプト”🤖🧷
 
+![Constructor Injection](./picture/gof_cs_study_011_clean_injection.png)
+
 AIに丸投げすると「謎抽象」「DIやりすぎ」が発生しやすい😇💦
 なので、**制約を先に縛る**のがコツ！
 
@@ -309,6 +317,8 @@ AIに丸投げすると「謎抽象」「DIやりすぎ」が発生しやすい�
 
 ## よくある落とし穴 ⚠️😵‍💫
 
+![Captive Dependency Trap](./picture/gof_cs_study_011_captive_dependency.png)
+
 * **DIコンテナに全部を押し込む病**：クラス設計が雑でもコンテナで誤魔化しがち😇
 * **Service Locator化**：`IServiceProvider` をあちこちに注入して `GetService()` しまくる（依存が隠れて最悪）🫥
 * **ライフタイム事故（Captive Dependency）**：`Singleton` が `Scoped` を掴んでしまう（後で爆発）💥
@@ -319,6 +329,8 @@ AIに丸投げすると「謎抽象」「DIやりすぎ」が発生しやすい�
 ---
 
 ## 演習（10〜30分）🧪🍀
+
+![Centralized DI Configuration](./picture/gof_cs_study_011_di_centralized.png)
 
 ### 演習1：手動new→DIへ置き換え（最小）🧩✨
 

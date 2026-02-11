@@ -25,6 +25,8 @@
 
 #### A. 分岐が増える（種類が増える）🌱➡️🌳
 
+![new as Glue](./picture/gof_cs_study_013_new_glue.png)
+
 * 例：支払い方法が増えるたびに `switch` が伸びる…📈💦
 * 例：通知が Email / SMS / Push で増えて、呼び出し側が「どれをnewするか」知りすぎる🤯
 
@@ -42,6 +44,8 @@
 
 #### B. 初期化が複雑（設定が多い・順番がある）🧱🧵
 
+![Pain A: Branching](./picture/gof_cs_study_013_pain_a_branching.png)
+
 * 例：`new HttpClient(...)` して、ヘッダ設定して、BaseAddress設定して…が毎回バラバラ😵
 * 例：コンストラクタ引数が増えすぎて、呼ぶ側が読めない😭
 
@@ -58,6 +62,8 @@
 ---
 
 #### C. テストで差し替えできない（newが中に埋まってる）🧪🚫
+
+![Pain B: Complex Initialization](./picture/gof_cs_study_013_pain_b_initialization.png)
 
 * 例：メソッドの中で `new` して外部通信クラスを作っちゃって、テストが外へ飛ぶ🌐💥
 * 例：`DateTime.Now` や `Guid.NewGuid()` みたいな「固定できないもの」とセットで地獄😇
@@ -89,6 +95,8 @@ mindmap
 ```
 
 ### 2) 例題（小さなEC）で「辛さ」をわざと見る👀🔥
+
+![Pain C: Hard to Test](./picture/gof_cs_study_013_pain_c_test_wall.png)
 
 まずは、ありがちな“生成が混ざったサービス”を見てみます。
 （この章は「改善する」より「見抜ける」ことがゴールだよ😊）
@@ -178,6 +186,8 @@ public sealed class EmailNotifier
 
 ## 落とし穴⚠️🐣
 
+![Diagnosing the Pains of new](./picture/gof_cs_study_013_diagnosis.png)
+
 ### 落とし穴1：最初からFactoryを量産する🏭🏭🏭💦
 
 「newが嫌だから全部Factory！」は逆効果になりがち😵
@@ -197,6 +207,8 @@ public sealed class EmailNotifier
 ---
 
 ## 演習（10〜30分）🧪📝✨
+
+![Choosing the Right Pattern](./picture/gof_cs_study_013_factory_choice.png)
 
 ### 演習1：newハイライト3か所🔎🖍️
 
