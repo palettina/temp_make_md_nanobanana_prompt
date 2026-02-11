@@ -39,6 +39,8 @@
 
 ### 2) Money を作る 💰✨（不変条件はここに集中）
 
+![Money Value Object](./picture/gof_cs_study_009_money_guard.png)
+
 不変条件は **amount >= 0** だけ入れるよ🙂
 
 * ここをしっかりさせると、後の章で安心してリファクタできる 🧸
@@ -76,6 +78,8 @@ public readonly record struct Money
 ---
 
 ### 3) OrderId を “型” にする 🪪✨（超小さいけど効く）
+
+![OrderId Value Object](./picture/gof_cs_study_009_order_id_tag.png)
 
 IDを Guid のまま使うと、別IDと混ざりやすいのが地味につらい😵
 なので **OrderId型**にしちゃうよ。
@@ -135,6 +139,8 @@ public enum PaymentMethod
 ---
 
 ### 6) Order を最小で作る 🛒✨（状態遷移だけ）
+
+![Order Entity](./picture/gof_cs_study_009_order_entity.png)
 
 Orderは「注文の核」だけ持つよ🙂
 
@@ -240,6 +246,8 @@ classDiagram
 
 ### 8) JSON用DTOを用意して、System.Text.Jsonで変換する 🧾✨
 
+![Domain to DTO Mapping](./picture/gof_cs_study_009_dto_mapper.png)
+
 ここが超大事ポイント🙂
 
 * ドメイン（Orderなど）は “業務ルール寄り”
@@ -299,6 +307,8 @@ Console.WriteLine(json);
 ---
 
 ### 9) テストを最小で3本だけ作る 🧪🌸（壊れない土台）
+
+![Core Foundation Tests](./picture/gof_cs_study_009_foundation_tests.png)
 
 この章のテストは「守りたい契約」だけでOK🙂
 
@@ -377,6 +387,8 @@ public class OrderTests
 ---
 
 ## チェック ✅🌸
+
+![Minimal EC Domain](./picture/gof_cs_study_009_minimal_domain.png)
 
 * Moneyのマイナスがテストで止まる 💰🚫
 * OrderがNewで始まり、MarkPaidでPaidになる 🛒✨
